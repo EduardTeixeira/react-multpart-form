@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 
-function DadosEntrega() {
+function DadosEntrega({ aoEnviar }) {
+
+    const [cep, setCep] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [numero, setNumero] = useState('');
+    const [estado, setEstado] = useState('');
+    const [cidade, setCidade] = useState('');
+
     return (
-        <form>
+        <form
+            onSubmit={(event) => {
+                event.preventDefault();
+                aoEnviar({ cep, endereco, numero, estado, cidade });
+            }}
+        >
             <TextField
                 id="cep"
                 label="CEP"
@@ -11,6 +23,10 @@ function DadosEntrega() {
                 required
                 variant="outlined"
                 margin="normal"
+                value={cep}
+                onChange={(event) => {
+                    setCep(event.target.value);
+                }}
             >
             </TextField>
             <TextField
@@ -20,7 +36,12 @@ function DadosEntrega() {
                 required
                 variant="outlined"
                 margin="normal"
-                fullWidth>
+                fullWidth
+                value={endereco}
+                onChange={(event) => {
+                    setEndereco(event.target.value);
+                }}
+            >
             </TextField>
             <TextField
                 id="numero"
@@ -29,6 +50,10 @@ function DadosEntrega() {
                 required
                 variant="outlined"
                 margin="normal"
+                value={numero}
+                onChange={(event) => {
+                    setNumero(event.target.value);
+                }}
             >
             </TextField>
             <TextField
@@ -38,6 +63,10 @@ function DadosEntrega() {
                 required
                 variant="outlined"
                 margin="normal"
+                value={estado}
+                onChange={(event) => {
+                    setEstado(event.target.value);
+                }}
             >
             </TextField>
             <TextField
@@ -47,6 +76,10 @@ function DadosEntrega() {
                 required
                 variant="outlined"
                 margin="normal"
+                value={cidade}
+                onChange={(event) => {
+                    setCidade(event.target.value);
+                }}
             >
             </TextField>
             <Button
