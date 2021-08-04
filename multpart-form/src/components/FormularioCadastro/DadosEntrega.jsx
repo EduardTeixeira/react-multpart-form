@@ -8,6 +8,7 @@ function DadosEntrega() {
                 id="cep"
                 label="CEP"
                 type="number"
+                required
                 variant="outlined"
                 margin="normal"
             >
@@ -16,6 +17,7 @@ function DadosEntrega() {
                 id="endereco"
                 label="Endereço"
                 type="text"
+                required
                 variant="outlined"
                 margin="normal"
                 fullWidth>
@@ -24,6 +26,7 @@ function DadosEntrega() {
                 id="numero"
                 label="Número"
                 type="number"
+                required
                 variant="outlined"
                 margin="normal"
             >
@@ -32,6 +35,7 @@ function DadosEntrega() {
                 id="estado"
                 label="Estado"
                 type="text"
+                required
                 variant="outlined"
                 margin="normal"
             >
@@ -40,6 +44,7 @@ function DadosEntrega() {
                 id="cidade"
                 label="cidade"
                 type="text"
+                required
                 variant="outlined"
                 margin="normal"
             >
@@ -49,7 +54,7 @@ function DadosEntrega() {
                 variant="contained"
                 color="primary"
                 fullWidth
-                >
+            >
                 Finalizar Cadastro
             </Button>
         </form>
